@@ -1,13 +1,13 @@
 package jp08;
 
-abstract class Parent {
+abstract class Parent33 {
 	public static final double PI = 3.141592;
 
 	public abstract void method1();
 	public abstract void method2();
 }
 
-abstract class Child extends Parent {
+abstract class Child extends Parent33 {
 	@Override
 	public void method1() {
 		System.out.println("Child method1()");
@@ -22,7 +22,7 @@ class GrandChild extends Child {
 }
 
 public class Abstract3 {
-	static void doSomething(Parent parent) {
+	static void doSomething(Parent33 parent) {
 		parent.method1();
 		parent.method2();
 	}
