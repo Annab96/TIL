@@ -1,0 +1,18 @@
+package jp13;
+
+import java.io.IOException;
+import java.nio.file.Paths;
+import java.util.Scanner;
+
+public class Example1_1112 {
+	public static void main(String[] args) throws IOException {
+		String filePath = "C:\\Users\\ehsdi\\Desktop\\Git\\TIL\\JAVA\\18_Java Project\\src\\jp02\\Person.java";
+		Scanner scanner = new Scanner(Paths.get(filePath));
+		scanner.useDelimiter("[^a-zA-Z]+");
+		while (scanner.hasNext("[a-zA-Z]+")) {
+			String s = scanner.next();
+			System.out.println(s);
+		}
+		scanner.close();
+	}
+}
