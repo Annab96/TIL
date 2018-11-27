@@ -4,4 +4,9 @@
 		<item value="C:\Users\ehsdi\Desktop\지뢰찾기_이클립스\Minesweeper-master"/>
 		<item value="C:\Users\ehsdi\Desktop\Git\TIL\JAVA"/>
 	</list>
+	<section name="NewWizardAction">
+		<item value="org.eclipse.jdt.ui.wizards.JavaProjectWizard" key="NewWizardSelectionPage.STORE_SELECTED_ID"/>
+		<list key="NewWizardSelectionPage.STORE_EXPANDED_CATEGORIES_ID">
+		</list>
+	</section>
 </section>
