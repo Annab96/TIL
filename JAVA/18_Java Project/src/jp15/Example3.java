@@ -18,8 +18,9 @@ public class Example3 {
 		Iterator<Integer> iterator = c.iterator();
 		while (iterator.hasNext()) {
 			int i = iterator.next();
-			if (i % 2 == 0)
+			if (i % 2 == 0||i%3==0)
 				iterator.remove();
+			
 		}
 		
 		for (int i : c)

@@ -13,7 +13,8 @@ public class Example2 {
 		// list 목록에서 정수를 전부 제거한다.
 		Iterator<Integer> it = list.iterator(); // 제네릭 문법이 있기 전 자바 if((Integer)it.next() %2 == 0)
 		while(it.hasNext()) {
-			if(it.next()%2 == 0)
+			int n=it.next();
+			if(n%2==0||n%3==0)
 				it.remove();
 		}
 	}

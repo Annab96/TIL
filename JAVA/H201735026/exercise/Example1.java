@@ -22,10 +22,27 @@ public class Example1 {
 		return maxValue;
 	}
 
+	//배열을 이용해서 구현. 
+	static int soulution2(List<Integer> list) {
+		//list 목록에서 가장 여러 번 등장하는 정수 값을 리턴하라
+		int[] count = new int[10];
+		int maxValue = 0, maxCount = 0;
+		for(int value : list) {
+			count[value] = count[value] +1;
+			if(count[value] > maxCount) {
+				maxCount = count[value];
+				maxValue = value;
+			}
+		}
+		return maxValue;
+	}
+	
 	public static void main(String[] args) {
 		List<Integer> a = Arrays.asList(new Integer[] { 1, 7, 1, 8, 5, 2, 2, 3, 5, 3, 1, 3, 7 });
 		System.out.println(a.toString());
 		int maxValue = solution(a);
+		System.out.println(maxValue);
+		maxValue = soulution2(a);
 		System.out.println(maxValue);
 	}
 }
