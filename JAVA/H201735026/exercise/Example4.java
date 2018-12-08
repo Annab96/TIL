@@ -19,11 +19,29 @@ public class Example4 {
 		return list.toArray(new String[list.size()]);
 	}
 
+	static String[] convertToArray2(String s) {
+		s = s.replaceAll("[^a-zA-Z]+", " ");
+		s = s.replaceAll("^[^a-zA-Z]+", "");
+		s = s.replaceAll("[^a-zA-Z]+$", "");
+		s = s.toLowerCase();
+		return s.split(" ");
+	}
+
+	static String[] convertToArray3(String s) {
+		s = s.replaceAll("[^a-zA-Z]+", " ");
+		s = s.trim().toLowerCase();
+		return s.split(" ");
+	}
+
+	static String[] convertToArray4(String s) {
+		return s.replaceAll("[^a-zA-Z]+", " ").trim().toLowerCase().split(" ");
+	}
+
 	public static void main(String[] args) {
 		String[] a = { "one 2 two, - Three,\t four; @ \t\nfive..,SIX)",
 				"1 one 2 two, - Three,\t four; @ \t\nfive..,SIX)" };
 		for (String s : a) {
-			String[] t = convertToArray(s);
+			String[] t = convertToArray3(s);
 			System.out.println(Arrays.toString(t));
 		}
 	}
