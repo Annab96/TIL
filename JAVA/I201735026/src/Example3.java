@@ -3,20 +3,21 @@ import java.util.Collections;
 import java.util.Comparator;
 import java.util.List;
 
-class Person{
-	String name;
-	int age;
-	
-	public Person(String name, int age) {
-		this.name = name;
-		this.age = age;
-	}
-	
-	@Override
-	public String toString() {
-		return String.format("Person(\"%s\",%d) ", name, age);
-	}
+class Person {
+    String name;
+    int age;
+
+    public Person(String name, int age) {
+        this.name = name;
+        this.age = age;
+    }
+
+    @Override
+    public String toString() {
+        return String.format("Person(\"%s\",%d) ", name, age);
+    }
 }
+
 class PersonComparator implements Comparator<Person> {
     public static final int ORDERBY_NAME = 0;
     public static final int ORDERBY_AGE = 1;
@@ -39,34 +40,35 @@ class PersonComparator implements Comparator<Person> {
 }
 
 public class Example3 {
-	static void sort1(List<Person> list) { // 이름 오름차순
-		Collections.sort(list, new PersonComparator(PersonComparator.ORDERBY_NAME, PersonComparator.ASC));
-	}
 
-	static void sort2(List<Person> list) { // 이름 내림차순
-		Collections.sort(list, new PersonComparator(PersonComparator.ORDERBY_NAME, PersonComparator.DESC));
-	}
+    static void sort1(List<Person> list) {
+        Collections.sort(list, new PersonComparator(PersonComparator.ORDERBY_NAME, PersonComparator.ASC));
+    }
 
-	static void sort3(List<Person> list) {  // 나이 오름차순
-		Collections.sort(list, new PersonComparator(PersonComparator.ORDERBY_AGE, PersonComparator.ASC));
-	}
+    static void sort2(List<Person> list) {
+        Collections.sort(list, new PersonComparator(PersonComparator.ORDERBY_NAME, PersonComparator.DESC));
+    }
 
-	static void sort4(List<Person> list) { // 나이 내림차순
-		Collections.sort(list, new PersonComparator(PersonComparator.ORDERBY_AGE, PersonComparator.DESC));
-	}
+    static void sort3(List<Person> list) {
+        Collections.sort(list, new PersonComparator(PersonComparator.ORDERBY_AGE, PersonComparator.ASC));
+    }
 
-	public static void main(String[] args) {
-		List<Person> list = new ArrayList<>();
-		list.add(new Person("홍길동", 18));
-		list.add(new Person("임꺽정", 19));
-		list.add(new Person("전우치", 20));
-		sort1(list);
-		System.out.println(list.toString());
-		sort2(list);
-		System.out.println(list.toString());
-		sort3(list);
-		System.out.println(list.toString());
-		sort4(list);
-		System.out.println(list.toString());
-	}
+    static void sort4(List<Person> list) {
+        Collections.sort(list, new PersonComparator(PersonComparator.ORDERBY_AGE, PersonComparator.DESC));
+    }
+
+    public static void main(String[] args) {
+        List<Person> list = new ArrayList<>();
+        list.add(new Person("홍길동", 18));
+        list.add(new Person("임꺽정", 19));
+        list.add(new Person("전우치", 20));
+        sort1(list);
+        System.out.println(list.toString());
+        sort2(list);
+        System.out.println(list.toString());
+        sort3(list);
+        System.out.println(list.toString());
+        sort4(list);
+        System.out.println(list.toString());
+    }
 }

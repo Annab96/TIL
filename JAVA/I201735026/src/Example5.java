@@ -1,25 +1,16 @@
-import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
-public class Example5 {
-	static String[] convertToArray(String s) {
-		ArrayList<String> list = new ArrayList<>();
-		Pattern pattern = Pattern.compile("[a-zA-Z]+");
-		Matcher matcher = pattern.matcher(s);
-		while (matcher.find())
-			list.add(matcher.group(0));
-		return list.toArray(new String[list.size()]);
-	
-	}
+public class Example4 {
 
-	public static void main(String[] args) {
-		String[] a = { "one 2 two, - Three,\t four; @ \t\nfive..,SIX)",
-				"1 one 2 two, - Three,\t four; @ \t\nfive..,SIX)" };
-		for (String s : a) {
-			String[] t = convertToArray(s);
-			System.out.println(Arrays.toString(t));
-		}
-	}
+    public static void main(String[] args) {
+        String s = "<tr><td>È«±æµ¿</td><td>18</td></tr><tr><td>ÀÓ²©Á¤</td><td>19</td></tr>" +
+                   "<span>false</span><div><span>true</span></div>";
+        String regex = "<([a-z]+)>([^<]+)</[a-z]+>";
+        Pattern pattern = Pattern.compile(regex);
+
+        Matcher matcher = pattern.matcher(s);
+        while (matcher.find())
+            System.out.printf("TAG:%s  TEXT:%s\n", matcher.group(1), matcher.group(2));
+    }
 }
