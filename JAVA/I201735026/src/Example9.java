@@ -4,7 +4,7 @@ public class Example9 {
 
     static boolean sameClass(Object o1, Object o2) {
         return o1.getClass() == o2.getClass();
-    }
+    }lf
 
     static boolean sameClass(Object o1, Class cls) {
         return o1.getClass() == cls;
